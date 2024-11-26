@@ -115,13 +115,13 @@ body {
   /* Phone Button Positioning (Left Corner) */
   .phone-btn {
     background-color: #007bff; /* Blue */
-    left: 7px; /* Padding from left */
+     /* Padding from left */
   }
   
   /* Map Button Positioning (Right Corner) */
   .map-btn {
     background-color: #28a745; /* Green */
-    right: 7px; /* Padding from right */
+     /* Padding from right */
   }
   
   /* Mobile-Specific Adjustments */
