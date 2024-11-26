@@ -62,7 +62,6 @@ li{
 }
 
 
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -81,51 +80,61 @@ body {
     padding: 2em;
   }
   
-  /* Floating Buttons Container */
-  .floating-container {
-    position: fixed;
-    bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    z-index: 1000;
-    pointer-events: none; /* Prevent interference with other elements */
-  }
-  
-  /* Individual Floating Buttons */
+  /* Floating Button Shared Styles */
   .floating-btn {
-    pointer-events: auto; /* Allow interaction */
+    position: fixed;
+    bottom: 20px; /* Adjust distance from bottom */
     width: 60px;
     height: 60px;
     background-color: white;
-    border-radius: 50%;
+    border-radius: 50%; /* Makes the button round */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
-    text-decoration: none;
     transition: transform 0.3s, box-shadow 0.3s;
-    border: none;
+    text-decoration: none;
+    z-index: 1000;
+    pointer-events: auto; /* Enable click */
     cursor: pointer;
   }
   
-  /* Button Hover Effect */
+  /* Hover Effect for Buttons */
   .floating-btn:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
   }
   
-  /* Phone Button Styling */
-  .phone-btn {
-    background-color: #007bff;
-    color: white;
+  /* Icon Styling */
+  .icon {
+    width: 50%; /* Adjust icon size to fit within the round button */
+    height: 50%;
+    object-fit: contain;
   }
   
-  /* Map Button Styling */
+  /* Phone Button Positioning (Left Corner) */
+  .phone-btn {
+    background-color: #007bff; /* Blue */
+    left: 7px; /* Padding from left */
+  }
+  
+  /* Map Button Positioning (Right Corner) */
   .map-btn {
-    background-color: #28a745;
-    color: white;
+    background-color: #28a745; /* Green */
+    right: 7px; /* Padding from right */
+  }
+  
+  /* Mobile-Specific Adjustments */
+  @media screen and (max-width: 768px) {
+    .floating-btn {
+      width: 50px;
+      height: 50px;
+      bottom: 15px; /* Adjust for smaller screens */
+    }
+  
+    .icon {
+      width: 100%; /* Resize icon for smaller buttons */
+      height: 100%;
+    }
   }
   
