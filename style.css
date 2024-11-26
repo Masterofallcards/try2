@@ -81,47 +81,50 @@ body {
   }
   
   /* Floating Button Shared Styles */
-  .floating-btn {
+.floating-btn {
     position: fixed;
-    bottom: 20px; /* Adjust distance from bottom */
+    bottom: 20px; /* Distance from bottom */
     width: 60px;
     height: 60px;
-    background-color: white;
-    border-radius: 50%; /* Makes the button round */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: transparent; /* Matches background or removes any additional colors */
+    border-radius: 50%; /* Makes the button completely round */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s, box-shadow 0.3s;
     text-decoration: none;
     z-index: 1000;
-    pointer-events: auto; /* Enable click */
+    pointer-events: auto; /* Allow click interaction */
     cursor: pointer;
+    overflow: hidden; /* Ensures no unwanted overflow */
   }
   
   /* Hover Effect for Buttons */
   .floating-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Slightly enlarge the button */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
   }
   
   /* Icon Styling */
   .icon {
-    width: 50%; /* Adjust icon size to fit within the round button */
-    height: 50%;
-    object-fit: contain;
+    width: 100%; /* Icon completely fills the button */
+    height: 100%; /* Icon completely fills the button */
+    object-fit: cover; /* Ensures the icon scales properly without distortion */
+    border-radius: 50%; /* Ensures the icon itself is round */
+    background-color: transparent; /* No extra background color */
   }
   
   /* Phone Button Positioning (Left Corner) */
   .phone-btn {
-    background-color: #007bff; /* Blue */
-     /* Padding from left */
+    left: 7px; /* Padding from the left side */
+    background-color: transparent; /* No background color */
   }
   
   /* Map Button Positioning (Right Corner) */
   .map-btn {
-    background-color: #28a745; /* Green */
-     /* Padding from right */
+    right: 7px; /* Padding from the right side */
+    background-color: transparent; /* No background color */
   }
   
   /* Mobile-Specific Adjustments */
@@ -133,8 +136,9 @@ body {
     }
   
     .icon {
-      width: 100%; /* Resize icon for smaller buttons */
+      width: 100%; /* Resize icon to fill button */
       height: 100%;
     }
   }
+  
   
